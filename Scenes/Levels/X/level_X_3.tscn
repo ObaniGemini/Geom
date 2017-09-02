@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Data/Shared/Tilesets/tileset_1X.tres" type="TileSet" id=1]
+[ext_resource path="res://Data/Graphics/Abstract/square.png" type="Texture" id=2]
+
+[node name="TileMap" type="TileMap"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 128, 128 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -327686, 3, -327685, 3, -327684, 3, -327683, 3, -327682, 3, -327681, 3, -393216, 3, -393215, 3, -393214, 3, -393213, 3, -393212, 3, -393211, 3, -262150, 3, -262149, 3, -262148, 3, -262147, 3, -262146, 3, -262145, 3, -327680, 3, -327679, 3, -327678, 3, -327677, 3, -327676, 3, -327675, 3, -196614, 3, -196613, 3, -196612, 4, -196611, 4, -196610, 4, -196609, 4, -262144, 4, -262143, 4, -262142, 4, -262141, 4, -262140, 3, -262139, 3, -131078, 3, -131077, 3, -131076, 4, -131075, 0, -131074, 0, -131073, 0, -196608, 0, -196607, 0, -196606, 0, -196605, 4, -196604, 3, -196603, 3, -65542, 3, -65541, 3, -65540, 4, -65539, 0, -65538, 0, -65537, 0, -131072, 0, -131071, 0, -131070, 0, -131069, 4, -131068, 3, -131067, 3, -6, 3, -5, 3, -4, 4, -3, 0, -2, 0, -1, 0, -65536, 0, -65535, 0, -65534, 0, -65533, 4, -65532, 3, -65531, 3, 65530, 3, 65531, 3, 65532, 4, 65533, 0, 65534, 0, 65535, 0, 0, 0, 1, 0, 2, 0, 3, 4, 4, 3, 5, 3, 131066, 3, 131067, 3, 131068, 4, 131069, 0, 131070, 0, 131071, 0, 65536, 0, 65537, 0, 65538, 0, 65539, 4, 65540, 3, 65541, 3, 196602, 3, 196603, 3, 196604, 4, 196605, 0, 196606, 0, 196607, 0, 131072, 0, 131073, 0, 131074, 0, 131075, 4, 131076, 3, 131077, 3, 262138, 3, 262139, 3, 262140, 4, 262141, 4, 262142, 4, 262143, 4, 196608, 4, 196609, 4, 196610, 4, 196611, 4, 196612, 3, 196613, 3, 327674, 3, 327675, 3, 327676, 3, 327677, 3, 327678, 3, 327679, 3, 262144, 3, 262145, 3, 262146, 3, 262147, 3, 262148, 3, 262149, 3, 393210, 3, 393211, 3, 393212, 3, 393213, 3, 393214, 3, 393215, 3, 327680, 3, 327681, 3, 327682, 3, 327683, 3, 327684, 3, 327685, 3 )
+
+[node name="spawn" type="Position2D" parent="."]
+
+[node name="decor" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="decor"]
+
+transform/pos = Vector2( 0, 2560 )
+transform/scale = Vector2( 8192, 4096 )
+texture = ExtResource( 2 )
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+
+[node name="Sprite1" type="Sprite" parent="decor"]
+
+transform/pos = Vector2( 0, -2560 )
+transform/scale = Vector2( 8192, 4096 )
+texture = ExtResource( 2 )
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+
+[node name="Sprite2" type="Sprite" parent="decor"]
+
+transform/pos = Vector2( 2304, 0 )
+transform/scale = Vector2( 3584, 1024 )
+texture = ExtResource( 2 )
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+
+[node name="Sprite3" type="Sprite" parent="decor"]
+
+transform/pos = Vector2( -2304, 0 )
+transform/scale = Vector2( 3584, 1024 )
+texture = ExtResource( 2 )
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+
+

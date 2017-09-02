@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/Enemies/enemy_quarsh_mini.gd" type="Script" id=1]
+[ext_resource path="res://Data/Graphics/Abstract/square_empty.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 50, 50 )
+
+[node name="mini_quarsh" type="RigidBody2D" groups=[
+"moveable",
+]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( -4.37114e-08, -1, 1, -4.37114e-08, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 10.0
+friction = 0.0
+bounce = 1.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 3
+contact_monitor = true
+sleeping = false
+can_sleep = false
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 40.0
+damp_override/linear = 0.0
+damp_override/angular = 0.0
+script/script = ExtResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+visibility/opacity = 0.1
+config/amount = 128
+config/lifetime = 0.8
+config/emit_timeout = 0.1
+config/emitting = false
+config/process_mode = 1
+config/half_extents = Vector2( 100, 100 )
+config/local_space = false
+config/explosiveness = 0.1
+params/direction = 360.0
+params/spread = 180.0
+params/linear_velocity = 500.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 50.0
+params/final_size = 0.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 2 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+transform/rot = 90.0
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Tween" type="Tween" parent="."]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+

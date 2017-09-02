@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Scripts/Entities/entity_checkpoint.gd" type="Script" id=1]
+[ext_resource path="res://Data/Graphics/Entities/checkpoint.png" type="Texture" id=2]
+[ext_resource path="res://Data/Graphics/Entities/checkpoint_2.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 140.0
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.3, 0.9, 0.3, 0.588235, 0, 0, 1, 0 )
+
+[sub_resource type="Animation" id=3]
+
+length = 1.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("1/Sprite:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+
+[node name="checkpoint" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="1"]
+
+texture = ExtResource( 2 )
+modulate = Color( 0.927938, 0.927938, 1, 1 )
+
+[node name="Particles" type="Particles2D" parent="1"]
+
+config/amount = 256
+config/lifetime = 5.0
+config/time_scale = 2.0
+config/preprocess = 0.1
+config/emitting = false
+config/process_mode = 1
+config/half_extents = Vector2( 40, 40 )
+config/texture = ExtResource( 2 )
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 200.0
+params/spin_velocity = 4.0
+params/orbit_velocity = 1.0
+params/gravity_direction = 0.0
+params/gravity_strength = 60.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 360.0
+params/initial_size = 0.8
+params/final_size = 0.1
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/linear_velocity = 0.5
+randomness/spin_velocity = 0.5
+randomness/orbit_velocity = 1.0
+randomness/gravity_direction = 1.0
+randomness/gravity_strength = 1.0
+randomness/initial_angle = 1.0
+color/color_ramp = SubResource( 2 )
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="2"]
+
+texture = ExtResource( 3 )
+modulate = Color( 0.927938, 0.927938, 1, 1 )
+
+[node name="Particles" type="Particles2D" parent="2"]
+
+config/amount = 256
+config/lifetime = 5.0
+config/time_scale = 2.0
+config/preprocess = 0.1
+config/emitting = false
+config/process_mode = 1
+config/half_extents = Vector2( 40, 40 )
+config/texture = ExtResource( 3 )
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 200.0
+params/spin_velocity = 4.0
+params/orbit_velocity = 1.0
+params/gravity_direction = 0.0
+params/gravity_strength = 60.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 360.0
+params/initial_size = 0.8
+params/final_size = 0.1
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/linear_velocity = 0.5
+randomness/spin_velocity = 0.5
+randomness/orbit_velocity = 1.0
+randomness/gravity_direction = 1.0
+randomness/gravity_strength = 1.0
+randomness/initial_angle = 1.0
+color/color_ramp = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/rotation = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="shape" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="body_exit" from="." to="." method="_on_body_exit"]
+
+

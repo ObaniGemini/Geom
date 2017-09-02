@@ -1,0 +1,113 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Data/Shared/Fonts/OpenSans-Light.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Data/Shared/Fonts/OpenSans-Regular.tres" type="DynamicFont" id=2]
+
+[node name="game" type="VBoxContainer"]
+
+rect/min_size = Vector2( 250, 210 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 210.0
+alignment = 0
+
+[node name="Header" type="Label" parent="."]
+
+rect/min_size = Vector2( 250, 60 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 250.0
+margin/bottom = 68.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="fullscreen" type="CheckBox" parent="."]
+
+rect/min_size = Vector2( 250, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 72.0
+margin/right = 250.0
+margin/bottom = 108.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Fullscreen"
+flat = false
+align = 2
+
+[node name="rythm" type="CheckBox" parent="."]
+
+rect/min_size = Vector2( 250, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 112.0
+margin/right = 250.0
+margin/bottom = 148.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Rythm"
+flat = false
+align = 2
+
+[node name="melody" type="CheckBox" parent="."]
+
+rect/min_size = Vector2( 250, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 152.0
+margin/right = 250.0
+margin/bottom = 188.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Melody"
+flat = false
+align = 2
+
+[node name="sounds" type="CheckBox" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 192.0
+margin/right = 250.0
+margin/bottom = 228.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Sounds"
+flat = false
+align = 2
+
+

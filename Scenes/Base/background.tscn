@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="ImageTexture" id=1]
+
+flags = 7
+image = Image( 1, 1, 0, RGBA, 255, 255, 255, 255 )
+size = Vector2( 1, 1 )
+storage = 0
+lossy_quality = 0.7
+
+[node name="Background" type="Sprite"]
+
+transform/scale = Vector2( 2944, 1664 )
+texture = SubResource( 1 )
+centered = false
+
+

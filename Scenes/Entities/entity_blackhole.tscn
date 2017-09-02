@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Data/Graphics/Abstract/sphere_32.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 1200.0
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.145205, 1 )
+colors = ColorArray( 1, 0.392157, 0.784314, 0.196078, 0.0784314, 0.784314, 0.823529, 0.784314, 0.392157, 0.392157, 1, 0.196078 )
+
+[node name="blackhole" type="Area2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+space_override = 1
+gravity_point = true
+gravity_distance_scale = 0.0001
+gravity_vec = Vector2( 0, 0 )
+gravity = 768.0
+linear_damp = 1.0
+angular_damp = 1.0
+monitorable = false
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Particles" type="Particles2D" parent="."]
+
+config/amount = 256
+config/lifetime = 2.0
+config/preprocess = 4.0
+config/process_mode = 1
+config/half_extents = Vector2( 700, 700 )
+config/texture = ExtResource( 1 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 0.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.5
+params/final_size = 0.01
+params/hue_variation = 1.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/orbit_velocity = 1.0
+color/color_ramp = SubResource( 2 )
+
+[node name="Attractor" type="ParticleAttractor2D" parent="."]
+
+enabled = true
+radius = 1100.0
+disable_radius = 0.1
+gravity = 8.0
+absorption = 0.5
+particles_path = NodePath("../Particles")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+visibility/opacity = 0.2
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+

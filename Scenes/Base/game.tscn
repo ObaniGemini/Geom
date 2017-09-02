@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://Scripts/Base/game.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Base/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Data/Graphics/Abstract/square.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Base/Shapes/backgrounds.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Base/hud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Base/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Data/Sounds/Musics/Rythmic1.opus" type="AudioStream" id=7]
+[ext_resource path="res://Data/Sounds/Musics/Rythmic2.opus" type="AudioStream" id=8]
+[ext_resource path="res://Data/Sounds/Musics/Rythmic3.opus" type="AudioStream" id=9]
+[ext_resource path="res://Scenes/Menus/menu_ingame.tscn" type="PackedScene" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[node name="game" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = {
+"__editor_plugin_screen__": "2D"
+}
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+layer = -2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="Background" parent="Background" instance=ExtResource( 2 )]
+
+texture = ExtResource( 3 )
+
+[node name="Backgrounds" parent="Background" instance=ExtResource( 4 )]
+
+transform/scale = Vector2( 0.35, 0.35 )
+
+[node name="level_holder" type="Node2D" parent="."]
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="hud" parent="hud" instance=ExtResource( 5 )]
+
+[node name="DeathTimer" type="CanvasLayer" parent="."]
+
+editor/display_folded = true
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ProgressBar" type="ProgressBar" parent="DeathTimer"]
+
+visibility/self_opacity = 0.5
+rect/min_size = Vector2( 1040, 590 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -6.0
+margin/top = -6.0
+margin/right = 1034.0
+margin/bottom = 584.0
+custom_styles/bg = SubResource( 1 )
+range/min = 0.0
+range/max = 800.0
+range/step = 0.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = true
+range/rounded = true
+percent/visible = false
+
+[node name="Tween" type="Tween" parent="DeathTimer"]
+
+playback/process_mode = 1
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="player" parent="." instance=ExtResource( 6 )]
+
+[node name="Rythmics" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="Rythmic1" type="StreamPlayer" parent="Rythmics"]
+
+stream/stream = ExtResource( 7 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Rythmic2" type="StreamPlayer" parent="Rythmics"]
+
+stream/stream = ExtResource( 8 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Rythmic3" type="StreamPlayer" parent="Rythmics"]
+
+stream/stream = ExtResource( 9 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Game Menu" parent="." instance=ExtResource( 10 )]
+
+

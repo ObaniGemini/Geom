@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scripts/Entities/entity_sizer.gd" type="Script" id=1]
+[ext_resource path="res://Data/Graphics/Abstract/sphere_120.png" type="Texture" id=2]
+[ext_resource path="res://Data/Graphics/Abstract/large_triangle.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 100.0
+
+[sub_resource type="Animation" id=2]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Triangles/Triangle1:transform/rot")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 360.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Triangles/Triangle2:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -90.0, 270.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Triangles/Triangle3:transform/rot")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -180.0, 180.0 ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Triangles/Triangle4:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 90.0, 450.0 ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sphere:transform/scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 0.5, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 6, 6 ) ] }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sphere:visibility/opacity")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 0.5, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+
+[node name="sizer" type="Area2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="Sphere" type="Sprite" parent="."]
+
+transform/scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 2 )
+modulate = Color( 0.466667, 0.466667, 0.466667, 0.392157 )
+
+[node name="Triangles" type="Node2D" parent="."]
+
+[node name="Triangle1" type="Sprite" parent="Triangles"]
+
+transform/pos = Vector2( 0, -72 )
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Triangle3" type="Sprite" parent="Triangles"]
+
+transform/pos = Vector2( 0, 72 )
+transform/rot = -180.0
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Triangle2" type="Sprite" parent="Triangles"]
+
+transform/pos = Vector2( 72, 0 )
+transform/rot = -90.0
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Triangle4" type="Sprite" parent="Triangles"]
+
+transform/pos = Vector2( -72, 0 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Center" type="Sprite" parent="."]
+
+transform/scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+modulate = Color( 0.5, 0.6, 0.8, 1 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/idle = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "idle"
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+

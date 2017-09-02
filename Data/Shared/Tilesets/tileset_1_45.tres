@@ -1,0 +1,237 @@
+[gd_resource type="TileSet" load_steps=27 format=1]
+
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor.png" type="Texture" id=1]
+[ext_resource path="res://Data/Graphics/Tilesets/2/death.png" type="Texture" id=2]
+[ext_resource path="res://Data/Shared/Tilesets/shapes/corner45.tres" type="Shape2D" id=3]
+[ext_resource path="res://Data/Graphics/Tilesets/2/death45_corner.png" type="Texture" id=4]
+[ext_resource path="res://Data/Shared/Tilesets/shapes/wall45.tres" type="Shape2D" id=5]
+[ext_resource path="res://Data/Graphics/Tilesets/2/death45_wall.png" type="Texture" id=6]
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor45_empty.png" type="Texture" id=7]
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor45_corner.png" type="Texture" id=8]
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor45_wall.png" type="Texture" id=9]
+[ext_resource path="res://Data/Graphics/Tilesets/2/win45_empty.png" type="Texture" id=10]
+[ext_resource path="res://Data/Graphics/Tilesets/2/win45_corner.png" type="Texture" id=11]
+[ext_resource path="res://Data/Graphics/Tilesets/2/win45_wall.png" type="Texture" id=12]
+[ext_resource path="res://Data/Graphics/Tilesets/2/wall45.png" type="Texture" id=13]
+[ext_resource path="res://Data/Graphics/Tilesets/2/peaceful.png" type="Texture" id=14]
+[ext_resource path="res://Data/Graphics/Tilesets/2/wall45_corner.png" type="Texture" id=15]
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor45_to_death.png" type="Texture" id=16]
+[ext_resource path="res://Data/Graphics/Tilesets/2/floor45_to_win.png" type="Texture" id=17]
+[ext_resource path="res://Data/Graphics/Tilesets/Base/wall.png" type="Texture" id=18]
+[ext_resource path="res://Data/Graphics/Tilesets/2/win.png" type="Texture" id=19]
+[ext_resource path="res://Data/Graphics/Tilesets/2/speed.png" type="Texture" id=20]
+[ext_resource path="res://Data/Graphics/Tilesets/2/nospeed.png" type="Texture" id=21]
+[ext_resource path="res://Data/Graphics/Tilesets/2/finish.png" type="Texture" id=22]
+[ext_resource path="res://Data/Graphics/Tilesets/2/death45_empty.png" type="Texture" id=23]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 0, 0, 0, 64, 64, 0, 64, 64 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( -64, -64, 64, -64, 64, 64, -64, 64 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64, 64 )
+
+[resource]
+
+0/name = "normal"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+1/name = "death"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 128, 128 )
+1/occluder_offset = Vector2( 0, 0 )
+1/occluder = SubResource( 1 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shapes = [  ]
+2/name = "peaceful"
+2/texture = ExtResource( 14 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 128, 128 )
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shapes = [  ]
+3/name = "wall"
+3/texture = ExtResource( 18 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 128, 128 )
+3/occluder_offset = Vector2( 0, 0 )
+3/occluder = SubResource( 2 )
+3/navigation_offset = Vector2( 64, 64 )
+3/shape_offset = Vector2( 64, 64 )
+3/shapes = [ SubResource( 3 ) ]
+4/name = "win"
+4/texture = ExtResource( 19 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 128, 128 )
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 64, 64 )
+4/shape_offset = Vector2( 0, 0 )
+4/shapes = [  ]
+5/name = "speed"
+5/texture = ExtResource( 20 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 128, 128 )
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 64, 64 )
+5/shape_offset = Vector2( 0, 0 )
+5/shapes = [  ]
+6/name = "nospeed"
+6/texture = ExtResource( 21 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 128, 128 )
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 64, 64 )
+6/shape_offset = Vector2( 0, 0 )
+6/shapes = [  ]
+7/name = "finish"
+7/texture = ExtResource( 22 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 128, 128 )
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 64, 64 )
+7/shape_offset = Vector2( 0, 0 )
+7/shapes = [  ]
+8/name = "death45_empty"
+8/texture = ExtResource( 23 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 128, 128 )
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shapes = [  ]
+10/name = "death45_corner"
+10/texture = ExtResource( 4 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 128, 128 )
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shapes = [ ExtResource( 3 ) ]
+11/name = "death45_wall"
+11/texture = ExtResource( 6 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 128, 128 )
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 64, 64 )
+11/shape_offset = Vector2( 0, 0 )
+11/shapes = [ ExtResource( 5 ) ]
+13/name = "floor45_empty"
+13/texture = ExtResource( 7 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 128, 128 )
+13/occluder_offset = Vector2( 0, 0 )
+13/navigation_offset = Vector2( 64, 64 )
+13/shape_offset = Vector2( 0, 0 )
+13/shapes = [  ]
+14/name = "floor45_corner"
+14/texture = ExtResource( 8 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 128, 128 )
+14/occluder_offset = Vector2( 0, 0 )
+14/navigation_offset = Vector2( 64, 64 )
+14/shape_offset = Vector2( 0, 0 )
+14/shapes = [ ExtResource( 3 ) ]
+15/name = "floor45_wall"
+15/texture = ExtResource( 9 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 128, 128 )
+15/occluder_offset = Vector2( 0, 0 )
+15/navigation_offset = Vector2( 64, 64 )
+15/shape_offset = Vector2( 0, 0 )
+15/shapes = [ ExtResource( 5 ) ]
+16/name = "win45_empty"
+16/texture = ExtResource( 10 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 128, 128 )
+16/occluder_offset = Vector2( 0, 0 )
+16/navigation_offset = Vector2( 0, 0 )
+16/shape_offset = Vector2( 0, 0 )
+16/shapes = [  ]
+17/name = "win45_corner"
+17/texture = ExtResource( 11 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 128, 128 )
+17/occluder_offset = Vector2( 0, 0 )
+17/navigation_offset = Vector2( 0, 0 )
+17/shape_offset = Vector2( 0, 0 )
+17/shapes = [ ExtResource( 3 ) ]
+18/name = "win45_wall"
+18/texture = ExtResource( 12 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 128, 128 )
+18/occluder_offset = Vector2( 0, 0 )
+18/navigation_offset = Vector2( 0, 0 )
+18/shape_offset = Vector2( 0, 0 )
+18/shapes = [ ExtResource( 5 ) ]
+19/name = "wall45"
+19/texture = ExtResource( 13 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 128, 128 )
+19/occluder_offset = Vector2( 0, 0 )
+19/navigation_offset = Vector2( 64, 64 )
+19/shape_offset = Vector2( 64, 64 )
+19/shapes = [ ExtResource( 5 ) ]
+20/name = "wall45_corner"
+20/texture = ExtResource( 15 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 0, 0, 128, 128 )
+20/occluder_offset = Vector2( 0, 0 )
+20/navigation_offset = Vector2( 64, 64 )
+20/shape_offset = Vector2( 0, 0 )
+20/shapes = [ ExtResource( 3 ) ]
+21/name = "floor45_to_death"
+21/texture = ExtResource( 16 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 128, 128 )
+21/occluder_offset = Vector2( 0, 0 )
+21/navigation_offset = Vector2( 64, 64 )
+21/shape_offset = Vector2( 64, 64 )
+21/shapes = [  ]
+22/name = "floor45_to_win"
+22/texture = ExtResource( 17 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 128, 128 )
+22/occluder_offset = Vector2( 0, 0 )
+22/navigation_offset = Vector2( 64, 64 )
+22/shape_offset = Vector2( 0, 0 )
+22/shapes = [  ]
+

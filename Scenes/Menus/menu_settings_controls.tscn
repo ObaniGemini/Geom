@@ -1,0 +1,519 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Data/Shared/Fonts/OpenSans-Light.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Data/Shared/Fonts/OpenSans-Regular.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Data/Shared/Fonts/OpenSans-SemiBold.tres" type="DynamicFont" id=3]
+
+[node name="controls" type="VBoxContainer"]
+
+rect/min_size = Vector2( 250, 300 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 300.0
+margin/bottom = 400.0
+alignment = 0
+
+[node name="heading" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 68.0
+custom_fonts/font = ExtResource( 1 )
+text = "Controls"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="move_up" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 72.0
+margin/right = 304.0
+margin/bottom = 102.0
+alignment = 0
+
+[node name="label" type="Label" parent="move_up"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Move up"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="move_up"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "W"
+flat = false
+
+[node name="move_left" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 106.0
+margin/right = 304.0
+margin/bottom = 136.0
+alignment = 0
+
+[node name="label" type="Label" parent="move_left"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Move left"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="move_left"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "A"
+flat = false
+
+[node name="move_down" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 140.0
+margin/right = 304.0
+margin/bottom = 170.0
+alignment = 0
+
+[node name="label" type="Label" parent="move_down"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Move down"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="move_down"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "S"
+flat = false
+
+[node name="move_right" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 174.0
+margin/right = 304.0
+margin/bottom = 204.0
+alignment = 0
+
+[node name="label" type="Label" parent="move_right"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Move right"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="move_right"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "D"
+flat = false
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+
+rect/min_size = Vector2( 0, 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 208.0
+margin/right = 304.0
+margin/bottom = 209.0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="shoot_up" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 213.0
+margin/right = 304.0
+margin/bottom = 243.0
+alignment = 0
+
+[node name="label" type="Label" parent="shoot_up"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Shoot up"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="shoot_up"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Up"
+flat = false
+
+[node name="shoot_left" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 247.0
+margin/right = 304.0
+margin/bottom = 277.0
+alignment = 0
+
+[node name="label" type="Label" parent="shoot_left"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Shoot left"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="shoot_left"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Left"
+flat = false
+
+[node name="shoot_down" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 281.0
+margin/right = 304.0
+margin/bottom = 311.0
+alignment = 0
+
+[node name="label" type="Label" parent="shoot_down"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Shoot down"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="shoot_down"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Down"
+flat = false
+
+[node name="shoot_right" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 315.0
+margin/right = 304.0
+margin/bottom = 345.0
+alignment = 0
+
+[node name="label" type="Label" parent="shoot_right"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Shoot right"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="shoot_right"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Right"
+flat = false
+
+[node name="VSplitContainer1" type="VSplitContainer" parent="."]
+
+rect/min_size = Vector2( 0, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 349.0
+margin/right = 304.0
+margin/bottom = 351.0
+split/offset = 0
+split/collapsed = false
+split/dragger_visibility = 0
+
+[node name="state_switch" type="HBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 355.0
+margin/right = 304.0
+margin/bottom = 385.0
+alignment = 0
+
+[node name="label" type="Label" parent="state_switch"]
+
+rect/min_size = Vector2( 200, 30 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 2 )
+text = "Switch state"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="action" type="Button" parent="state_switch"]
+
+rect/min_size = Vector2( 100, 30 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 204.0
+margin/top = 0.0
+margin/right = 304.0
+margin/bottom = 30.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Space"
+flat = false
+
+[node name="shoot_with_mouse" type="CheckBox" parent="."]
+
+rect/min_size = Vector2( 300, 40 )
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 389.0
+margin/right = 304.0
+margin/bottom = 429.0
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Enable shooting with mouse"
+flat = false
+align = 2
+
+

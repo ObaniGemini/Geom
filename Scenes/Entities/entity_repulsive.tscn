@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=1]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 1200.0
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.0350877, 0.690058, 1 )
+colors = ColorArray( 1, 1, 1, 0, 0.7, 0.6, 0.5, 0, 0.9, 0.6, 0.4, 1, 0.45, 0.4, 0.6, 0 )
+
+[node name="repulsive" type="Area2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+space_override = 1
+gravity_point = true
+gravity_distance_scale = 0.001
+gravity_vec = Vector2( 0, 0 )
+gravity = -896.0
+linear_damp = 1.0
+angular_damp = 0.0
+monitorable = false
+
+[node name="Particles" type="Particles2D" parent="."]
+
+visibility/opacity = 0.8
+config/amount = 320
+config/lifetime = 1.0
+config/preprocess = 0.1
+config/process_mode = 1
+config/half_extents = Vector2( 100, 100 )
+params/direction = 0.0
+params/spread = 0.0
+params/linear_velocity = 0.0
+params/spin_velocity = 10.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 60.0
+params/final_size = 30.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spin_velocity = 1.0
+color/color_ramp = SubResource( 2 )
+
+[node name="Attractor" type="ParticleAttractor2D" parent="."]
+
+enabled = true
+radius = 600.0
+disable_radius = 0.0
+gravity = -10.0
+absorption = 0.0
+particles_path = NodePath("../Particles")
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+
